@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import React from "react";
-
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 // Import your components
 import Navbar from "./pages/Navbar";
@@ -19,7 +19,7 @@ function App() {
     <div className="relative">
       <Navbar />
       <ScrollProgress />
-
+      <HashRouter>
       <Routes>
         {/* ✅ Blog detail route */}
         <Route path="/blog/:id" element={<BlogPost />} />
@@ -54,6 +54,7 @@ function App() {
           }
         />
       </Routes>
+           </HashRouter>
     </div>
   );
 };
