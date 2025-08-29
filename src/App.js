@@ -1,11 +1,9 @@
-import { Routes, Route } from "react-router-dom";
-
 import React from "react";
-
+import { Routes, Route } from "react-router-dom";
 
 // Import your components
 import Navbar from "./pages/Navbar";
-import ScrollProgress from "./pages/ScrollButtons"; 
+import ScrollProgress from "./pages/ScrollButtons";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Service from "./pages/Service";
@@ -13,22 +11,24 @@ import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import BlogPost from "./pages/BlogPost"; 
+import BlogPost from "./pages/BlogPost";
+
 function App() {
   return (
     <div className="relative">
+      {/* Navbar + Scroll Progress always visible */}
       <Navbar />
       <ScrollProgress />
-   
+
       <Routes>
-        {/* ✅ Blog detail route */}
+        {/* ✅ Blog detail page */}
         <Route path="/blog/:id" element={<BlogPost />} />
 
-        {/* ✅ Main sections */}
+        {/* ✅ Main landing page */}
         <Route
           path="/"
           element={
-            <>
+            <main>
               <section id="home" className="min-h-screen">
                 <Home />
               </section>
@@ -50,12 +50,12 @@ function App() {
               <section id="contact" className="min-h-screen">
                 <Contact />
               </section>
-            </>
+            </main>
           }
         />
       </Routes>
-           
     </div>
   );
-};
+}
+
 export default App;
